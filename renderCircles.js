@@ -3,9 +3,13 @@ function renderCircles(circles) {
     // HINT: You probably need to write a for loop!
     //       Or, if you're feeling fancy, use .map() 
     return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(circles)}</code>
-        </div>
+        for (i=0; i < circlesAbstraction.length; i++) {
+            <div class="circle" style="
+                                width: ${circles.radius};
+                                border-radius: 50%;
+                                background-color: ${circles.color};">
+            </div>
+        }
     `
 }
 
