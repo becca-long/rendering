@@ -24,9 +24,12 @@ function renderStudents(students) {
         return student
     }).join('')
     
-    finalHTML += studentsHTML
     
-    return finalHTML
+    return `<div class="container">
+                <h1>${finalHTML}</h1>
+                <div>${studentsHTML}</div>
+            </div>
+            `
 }
 
 
