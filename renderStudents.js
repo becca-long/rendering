@@ -1,24 +1,12 @@
 
 function renderStudents(students) {
     var finalHTML = '<div class="container">Roll Call!</div>';
-
-    // var studentAttendance = []
-    
-    // for (i = 0; i < `${students.length}`; i++) {
-    //     if (`${students.isPresent}` = true) {
-    //         studentAttendance.push('Present');
-    //     } else {
-    //         studentAttendance.push('Absent');
-    //     }
-    // }
-
-    // return studentAttendance
     
     var studentsHTML = students.map(function (student) {
         var student = `
-        <div class='student'>
+        <div class='student' style='background-color: ${backgroundColor(student.isPresent)}'>
         <h3>${student.name}</h3>
-        <b>${student.isPresent}</b>
+        <b>${attendance(student.isPresent)}</b>
         </div>
         `
         return student
@@ -32,7 +20,21 @@ function renderStudents(students) {
             `
 }
 
+function attendance (input) {
+    if (input === true) {
+        return 'Present';
+    } else {
+        return 'Absent';
+    }
+}
 
+function backgroundColor (input) {
+    if (input === true) {
+        return 'green';
+    } else {
+        return 'red';
+    }
+} 
 
 
 function students() {
